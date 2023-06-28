@@ -19,7 +19,6 @@ def solution(operations):
             elif current[1] == "-1":
                 minvalue = heapq.heappop(heap)
                 maxheap.remove((minvalue*-1, minvalue))
-    
     if heap:
         return [heapq.heappop(maxheap)[1], heapq.heappop(heap)]
     else:
