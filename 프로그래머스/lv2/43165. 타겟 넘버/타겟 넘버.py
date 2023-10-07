@@ -1,20 +1,17 @@
-answer = 0
-
-def dfs(numbers, target, idx, num):
-    global answer
-    
-    if idx == len(numbers) and target == num:
-        answer += 1
-        return
-    elif idx == len(numbers):
-        return
-    dfs(numbers, target, idx+1, num+ numbers[idx])
-    dfs(numbers, target, idx+1, num-numbers[idx])
-    
-
 def solution(numbers, target):
     global answer
-    dfs(numbers, target, 0, 0)
+    answer = 0
+
+    
+    def dfs(depth, sum):
+        global answer
+        if depth == len(numbers) :
+            if sum == target:
+                answer += 1
+            return
+        
+        dfs(depth+1, sum+numbers[depth])
+        dfs(depth+1, sum-numbers[depth])
+        
+    dfs(0,0)
     return answer
-
-
