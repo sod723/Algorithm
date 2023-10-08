@@ -5,7 +5,7 @@ def solution(maps):
 
     n = len(maps)
     m = len(maps[0])
-    visited = [[False]*m for _ in range(n)]
+    visited = [[False for _ in range(m)] for _ in range(n)]
     
     answer = bfs(maps, visited, 0, 0)
     
